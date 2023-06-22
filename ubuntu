@@ -1,4 +1,5 @@
 FROM ubuntu:14.04
 RUN apt-get update && apt-get install -y apache2 && apt-get install -y apache2-utils && apt-get clean
+COPY source/myweb.war /usr/local/tomcat/webapps/myweb.war
 EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]
